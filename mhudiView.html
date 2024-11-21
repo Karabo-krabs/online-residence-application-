@@ -1,0 +1,210 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mhudi Accommodation</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #b22222;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        .description {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            position: relative;
+            width: 450px;
+            height: 350px;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+        }
+
+        .slides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Next & Previous Buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Dots (for navigation) */
+        .dot-container {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: white;
+            color: #b22222;
+            border: 2px solid #b22222;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #b22222;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="homeStu.php" class="back-button">Back</a> <!-- Replace 'previous_page.html' with the actual page -->
+
+    <h1>Mhudi Accommodation</h1>
+</header>
+
+<div class="description">
+    <p><b>Mhudi</b> Residence offering vibrant communal spaces and a welcoming atmosphere. 
+        Ideal for students who value comfort and convenience, Mhudi provides fully equipped 
+        rooms with all the essentials for a balanced student life.</p>
+</div>
+
+<div class="slideshow-container">
+
+    <!-- Slide 1 -->
+    <div class="slides">
+        <img src="mhudi1.jpg"style=" height: 400px;" alt="Moroka Image 1">
+        <div class="text">Kitchen</div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slides">
+        <img src="Mhudi.jpg" style="width: 450px;height: 340px;" alt="Moroka Image 2">
+        <div class="text">Outside</div>
+    
+    </div>
+
+    <!-- Next and Previous Buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- Dots (Image Navigation) -->
+<div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+</div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
+
+</body>
+</html>

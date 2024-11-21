@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Application Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: gray; /* Light background color */
+            color: white; /* Dark text color */
+        }
+
+        .back-button {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            background-color: white;
+            color: #b22222;
+            border: 2px solid #b22222;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #b22222;
+            color: white;
+        }
+        h1 {
+            text-align: center; /* Center the title */
+            color: white; /* Dark red color */
+        }
+        /* Header Style */
+        .h1 {
+            background-color: rgb(179, 40, 40); /* Reddish background color */
+            color: white; /* White text color */
+            padding: 20px; /* Padding around the text */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+            text-align: center; /* Center the text */
+        }
+
+
+        /* Application Entry Styles */
+        div {
+        /* White background for each application */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+            padding: 15px; /* Padding inside the application box */
+            margin-bottom: 15px; /* Space between application entries */
+        }
+
+        /* Application Details */
+        p {
+            margin: 5px 0; /* Space between paragraphs */
+        }
+        /* Form Container */
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
+            border-radius: 8px; /* Rounded corners */
+            padding: 20px; /* Padding inside the container */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+            max-width: 400px; /* Maximum width for the form */
+            margin: 20px auto; /* Center the form on the page */
+        }
+
+        /* Button Styles */
+        button {
+            padding: 10px 15px; /* Padding inside buttons */
+            margin: 5px; /* Space between buttons */
+            background-color: rgb(92, 16, 16); /* Dark red background */
+            color: white; /* White text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        button:hover {
+            background-color: darkred; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="h1">
+        <a href="track_application.html.php" class="back-button">Back</a>
+        <h1>Track Application Status</h1>
+    </div>
+
+    <div class="form-container">
+        <h2>Enter Your Student Number</h2>
+        <form id="trackForm" action="track_application.php" method="POST">
+            <label for="student-number">Student Number</label>
+            <input type="number" id="student-number" name="student_number" placeholder="Enter your student number" required>
+            <button type="submit">Check Status</button>
+        </form>
+    </div>
+</body>
+</html>

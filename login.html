@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Styling for the login container */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('IMG-20240910-WA0009.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        header img {
+            width: 150px;
+        }
+
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .login-box {
+            background-color: rgba(128, 0, 0, 0.8);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .textbox {
+            margin: 10px 0;
+        }
+
+        .textbox input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .textbox input[type="text"],
+        .textbox input[type="password"] {
+            background-color: white;
+            border: 2px solid red;
+            color: black;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(92, 16, 16);
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: darkred;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .radio-container {
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .radio-container label {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<header>
+    <img src="logo.jpg" alt="Logo"> 
+</header>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Login</h1>
+            <form method="POST" action="login.php" id="loginForm">
+                <div class="radio-container">
+                    <label><input type="radio" name="userType" value="student" checked> Student</label>
+                    <label><input type="radio" name="userType" value="admin"> Admin</label>
+                </div>
+                <div class="textbox">
+                    <input type="text" id="username" placeholder="Username" name="username" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" id="password" placeholder="Password" name="password" required>
+                </div>
+                <input type="submit" class="btn" value="Login"><br>
+                <a href="register.html">Don't have an account? Create</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
